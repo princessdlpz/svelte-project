@@ -7,7 +7,10 @@ declare global {
 		// interface PageData {}
 		// interface PageState {}
 		// interface Platform {}
-	}
+		interface PageData {
+			user:SpotifyApi.CurrentUsersProfileResponse | null;	
+		}
+	} // Add closing curly brace here
 }
 
 export {};
