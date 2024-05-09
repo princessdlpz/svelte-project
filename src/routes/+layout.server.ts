@@ -22,6 +22,7 @@ export const load: LayoutServerLoad = async ({ cookies, fetch }) => {
 		};
 	} if(profileRes.status === 401 && refreshToken){
 		// Refresh token and try again
+		fetch('api/auth/refresh');
 	} else {
 		return {
 			user: null
