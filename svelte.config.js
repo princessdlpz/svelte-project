@@ -16,9 +16,11 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			$components: './src/lib/components',
+			$actions: './src/lib/actions',
 			$styles: './src/styles',
 			$utils: './src/utils',
 			$assets: './src/assets',
+	
 		}
 	},
 

@@ -1,6 +1,7 @@
 <h1>Welcome to SvelteKit</h1>
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 <input />
+<div style="height: 1000px" />
 <select>
 	<option>Option</option>
 </select>
@@ -8,13 +9,13 @@
 
 <style lang="scss">
 	h1 {
-		color: red;
+		color: orange;
 		font-size: functions.toRem(36);
 		@include breakpoint.up('md') {
-			color: green;
+			color: orange;
 		}
 		@include breakpoint.up('lg') {
-			color: blue;
+			color: orange;
 		}
 	}
 </style>
