@@ -28,7 +28,8 @@
 					},
 					trigger: 'click',
 					placement: 'bottom-end',
-					interactive: true
+					interactive: true,
+					theme: 'menu'
 				}}
 			>
 				{#if user?.images && user.images.length > 0}
@@ -41,13 +42,7 @@
 		<div id="profile-menu" style="display: none;">
 			<div class="profile-menu-content">
 				<ul>
-					<li>
-						<a href={user?.external_urls.spotify} target="_blank" rel="noopener noreferrer"
-							>View on Spotify
-							<ExternalLink focusable="false" aria-hidden />
-						</a>
-					</li>
-					<li><a href="/profile">View Profile</a></li>
+										
 					<li><LogoutButton /></li>
 				</ul>
 			</div>
@@ -82,6 +77,36 @@
 		}
 		&:hover {
 			background-color: var(--accent-color);
+		}
+	}
+	.profile-menu-content {
+		padding: 5px 0;
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			li {
+				&:hover {
+					background-image: linear-gradient(rgba(255, 255, 255, 0.07) 0 0);
+				}
+				a :global(svg) {
+					vertical-align: middle;
+					margin-left: 10px;
+				}
+				a,
+				:global(button) {
+					display: inline-block;
+					padding: 10px 15px;
+					background: none;
+					border: none;
+					text-decoration: none;
+					cursor: pointer;
+					color: var(--menu-text-color);
+					width: 100%;
+					text-align: left;
+					font-size: functions.toRem(14);
+				}
+			}
 		}
 	}
 </style>
