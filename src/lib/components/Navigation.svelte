@@ -116,7 +116,7 @@
 					class="close-menu-button"
 				/>
 			{/if}
-			<h1>Studify</h1>
+			<h1> Studify </h1>
 			<ul>
 				{#each menuItems as item, index}
 					{@const iconProps = {
@@ -167,6 +167,12 @@
 			height: 100vh;
 			overflow: auto;
 			display: none;
+			:global(html.no-js) & {
+				@include breakpoint.down('md') {
+					display: block;
+					height: auto;
+				}
+			}
 			ul {
 				padding: 0;
 				margin: 20px 0 0;
