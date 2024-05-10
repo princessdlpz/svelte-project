@@ -7,7 +7,7 @@
 	<div class="content">
 		<title>STUDIFY</title>
 		<h1>Studify</h1>
-		<p>Master the art of concentration with the perfect study soundtrack.Tune into success with Studify</p>
+		<p>Master the art of concentration with the perfect study soundtrack. Tune into success with Studify</p>
 		<div class="buttons">
 			<Button
 				element="a"
@@ -55,7 +55,7 @@
 		}
 	}
 	.content {
-		flex: 1.6;
+		flex: 1.05;
 		h1 {
 			font-size: functions.toRem(60);
 		}
