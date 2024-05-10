@@ -1,5 +1,5 @@
 import type { LayoutServerLoad } from './$types';
-import { SPOTIFY_BASE_URI } from '$env/static/private';
+import { SPOTIFY_BASE_URL } from '$env/static/private';
 import { redirect } from '@sveltejs/kit';
 
 export const load: LayoutServerLoad = async ({ cookies, fetch, url }) => {
@@ -11,7 +11,7 @@ export const load: LayoutServerLoad = async ({ cookies, fetch, url }) => {
 		};
 	}
 
-	const profileRes = await fetch(`${SPOTIFY_BASE_URI}/me`, {
+	const profileRes = await fetch(`${SPOTIFY_BASE_URL}/me`, {
 		headers: {
 			Authorization: `Bearer ${accessToken}`
 		}
@@ -22,6 +22,7 @@ export const load: LayoutServerLoad = async ({ cookies, fetch, url }) => {
 			user: profile
 		};
 	}
+	
 	if (profileRes.status === 401 && refreshToken) {
 		// refresh the token and try again
 		const refreshRes = await fetch('/api/auth/refresh');

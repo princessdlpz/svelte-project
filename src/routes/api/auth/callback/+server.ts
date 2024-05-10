@@ -29,7 +29,16 @@ export const GET: RequestHandler = async ({ url, cookies, fetch }) => {
 			client_id: SPOTIFY_APP_CLIENT_ID
 		})
 	});
-cookies.delete('spotify_auth_state', { path: '/' });
+	const responseJSON = await response.json();
+
+	if (responseJSON.error) {
+		throw error(400, responseJSON.error_description);
+	}
+
+	cookies.delete('spotify_auth_state', { path: '/' });
+	cookies.delete('spotify_auth_challenge_verifier', { path: '/' });
+	cookies.set('refresh_token', responseJSON.refresh_token, { path: '/' });
+	cookies.set('access_token', responseJSON.access_token, { path: '/' });
 
 	throw redirect(303, '/');
 };

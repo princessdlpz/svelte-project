@@ -9,8 +9,14 @@ const config = {
 	}),
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		alias: {
+			$components: './src/components',
+			$styles: './src/styles',
+			$utils: './src/utils'
+		}
 	}
-};
+}
+
 
 export default config;
