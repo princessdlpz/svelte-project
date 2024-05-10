@@ -6,7 +6,7 @@ const config = {
 	preprocess: [
 		preprocess({
 			scss: {
-				prependData: `@import "../styles/functions";\n@use "@unsass/breakpoint";`
+				prependData: '@use "src/styles/functions";@use "@unsass/breakpoint";'
 			}
 		}),
 		mdsvex()
@@ -17,7 +17,8 @@ const config = {
 		alias: {
 			$components: './src/lib/components',
 			$styles: './src/styles',
-			$utils: './src/utils'
+			$utils: './src/utils',
+			$assets: './src/assets',
 		}
 	},
 
